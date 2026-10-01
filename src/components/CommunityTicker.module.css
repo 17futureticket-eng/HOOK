@@ -1,0 +1,96 @@
+.tickerWrap {
+  display: flex;
+  align-items: center;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  height: 44px;
+}
+
+.tickerLabel {
+  flex-shrink: 0;
+  padding: 0 20px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  border-right: 1px solid var(--border);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.tickerTrack {
+  flex: 1;
+  overflow: hidden;
+}
+
+.tickerScroll {
+  display: flex;
+  gap: 8px;
+  padding: 0 8px;
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
+
+.tickerScroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.tickerItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* coming soon */
+.comingSoon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+  overflow-x: auto;
+}
+
+.comingSoon::-webkit-scrollbar { display: none; }
+
+.csLabel {
+  font-size: 11px;
+  color: var(--muted);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.csItems {
+  display: flex;
+  gap: 6px;
+}
+
+.csChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}

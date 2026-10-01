@@ -1,0 +1,280 @@
+/* ══════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  background: var(--bg);
+  padding: 48px 40px 44px;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+/* Canvas fills entire hero behind everything */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: block;
+}
+
+/* Content column — left-aligned, max 52% so circuit shows right */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 56%;
+}
+
+@media (max-width: 900px) { .content { max-width: 100%; } }
+
+/* ── Badges ─────────────────────────────────────────── */
+.badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(18, 18, 22, 0.88);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 12px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  flex-shrink: 0;
+}
+
+.uniIcon { font-size: 13px; }
+.pink    { color: var(--pink); }
+
+/* ── Heading ────────────────────────────────────────── */
+.heading {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.sub {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 380px;
+}
+
+/* ══════════════════════════════════════════════════════
+   SEARCH BAR — always a single flat row
+   (Source tab expands the whole bar taller via min-height)
+══════════════════════════════════════════════════════ */
+
+/* Outer glow ring — extends to full content width */
+.searchOuter {
+  width: 100%;
+  border-radius: 50px;          /* pill shape matching reference */
+  box-shadow:
+    0 0 0 1.5px var(--pink),
+    0 0 24px rgba(255, 45, 120, 0.22),
+    0 0 56px rgba(255, 45, 120, 0.07);
+}
+
+/* Inner container — SINGLE ROW always */
+.searchWrap {
+  display: flex;
+  flex-direction: row;          /* ← flat row, not column */
+  align-items: center;
+  background: #0e0e12;
+  border-radius: 50px;
+  padding: 6px 6px 6px 8px;
+  min-height: 56px;
+  gap: 0;
+}
+
+/* Source mode makes the pill taller and square-ish */
+.searchWrapSource {
+  border-radius: 18px;
+  align-items: flex-start;
+  min-height: 140px;
+  padding: 10px 10px 10px 12px;
+}
+
+/* ── Tab group (left side) ──────────────────────────── */
+.tabs {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0;
+}
+
+.tab {
+  background: transparent;
+  color: var(--muted);
+  border-radius: 50px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+
+.tab:hover { color: var(--text); }
+
+.tabActive {
+  color: var(--text);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Vertical divider between tabs and chain ────────── */
+.divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  flex-shrink: 0;
+  margin: 0 10px;
+  align-self: center;
+}
+
+/* ── Text input (stretches) ─────────────────────────── */
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  min-width: 0;
+  padding: 0 12px;
+  caret-color: var(--pink);
+  align-self: center;
+  height: 36px;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: rgba(136, 136, 150, 0.4);
+}
+
+/* ── Source tab: monospace textarea (replaces .input) ── */
+.sourceEditor {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: rgba(160, 160, 175, 0.85);
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  outline: none;
+  resize: none;
+  padding: 4px 12px;
+  min-height: 90px;
+  caret-color: var(--pink);
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.sourceEditor::placeholder {
+  color: rgba(136, 136, 150, 0.35);
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ── Scan button ────────────────────────────────────── */
+.scanBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink);
+  color: #fff;
+  border-radius: 50px;
+  padding: 11px 26px;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.2px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 0 18px rgba(255, 45, 120, 0.45);
+  cursor: pointer;
+  font-family: inherit;
+  align-self: center;
+}
+
+.scanBtn:hover {
+  background: #ff1a6a;
+  box-shadow: 0 0 28px rgba(255, 45, 120, 0.65);
+  transform: translateY(-1px);
+}
+
+.scanBtn:active { transform: translateY(0); }
+
+/* Source mode: scan button top-right */
+.scanBtnSource {
+  align-self: flex-start;
+  margin-top: 0;
+  border-radius: 12px;
+}
+
+/* ══════════════════════════════════════════════════════
+   ROOT CHIPS ROW
+══════════════════════════════════════════════════════ */
+.chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: rgba(18, 18, 22, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 11.5px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s;
+  backdrop-filter: blur(4px);
+  font-family: inherit;
+}
+
+.chip:hover { border-color: rgba(255, 45, 120, 0.4); }
+
+.chip span {
+  color: var(--text);
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.moreWays {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--pink);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.moreWays:hover { text-decoration: underline; }

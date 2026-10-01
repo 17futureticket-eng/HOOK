@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" shape-rendering="crispEdges">
+  <!-- dark background -->
+  <rect width="100" height="100" rx="18" fill="#0d0d0f"/>
+
+  <!--
+    Pixel 3D "H"
+    Face color:    #FF2D9B  (hot pink)
+    Shadow color:  #7A0049  (deep magenta, bottom-right offset)
+    Highlight:     #FFB0E8  (top bevel)
+    Pixel size: 8px, shadow offset: 5px down-right
+    H grid (11 cols x 13 rows), each pixel = 6px
+    Left col: x=8..19, Right col: x=56..67, Cross: x=8..67 at rows 6-7
+  -->
+
+  <!-- ░░ SHADOW LAYER (offset +5,+5) ░░ -->
+  <!-- left vertical bar shadow -->
+  <rect x="13" y="13" width="20" height="74" fill="#7A0049"/>
+  <!-- right vertical bar shadow -->
+  <rect x="61" y="13" width="20" height="74" fill="#7A0049"/>
+  <!-- crossbar shadow -->
+  <rect x="13" y="43" width="68" height="14" fill="#7A0049"/>
+
+  <!-- ░░ FACE LAYER ░░ -->
+  <!-- left vertical bar -->
+  <rect x="8"  y="8"  width="20" height="74" fill="#FF2D9B"/>
+  <!-- right vertical bar -->
+  <rect x="56" y="8"  width="20" height="74" fill="#FF2D9B"/>
+  <!-- crossbar -->
+  <rect x="8"  y="38" width="68" height="14" fill="#FF2D9B"/>
+
+  <!-- ░░ TOP BEVEL HIGHLIGHT (top edge of each bar) ░░ -->
+  <!-- left bar top highlight -->
+  <rect x="8"  y="8"  width="20" height="5"  fill="#FFB0E8" opacity="0.85"/>
+  <!-- right bar top highlight -->
+  <rect x="56" y="8"  width="20" height="5"  fill="#FFB0E8" opacity="0.85"/>
+  <!-- crossbar top highlight -->
+  <rect x="8"  y="38" width="68" height="4"  fill="#FFB0E8" opacity="0.7"/>
+
+  <!-- ░░ LEFT BEVEL HIGHLIGHT ░░ -->
+  <rect x="8"  y="8"  width="4"  height="74" fill="#FFB0E8" opacity="0.5"/>
+  <rect x="56" y="8"  width="4"  height="74" fill="#FFB0E8" opacity="0.5"/>
+
+  <!-- ░░ BOTTOM-RIGHT DARKER SHADE ░░ -->
+  <rect x="24" y="70" width="4"  height="12" fill="#CC1A7A"/>
+  <rect x="72" y="70" width="4"  height="12" fill="#CC1A7A"/>
+
+  <!-- ░░ PIXEL STEP CORNERS (bottom-left staircase) ░░ -->
+  <rect x="8"  y="82" width="6"  height="6"  fill="#FF2D9B"/>
+  <rect x="14" y="76" width="6"  height="6"  fill="#7A0049"/>
+  <rect x="56" y="82" width="6"  height="6"  fill="#FF2D9B"/>
+  <rect x="76" y="82" width="6"  height="6"  fill="#FF2D9B"/>
+  <rect x="70" y="76" width="6"  height="6"  fill="#7A0049"/>
+</svg>

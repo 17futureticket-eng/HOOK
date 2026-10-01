@@ -1,0 +1,210 @@
+/* ── No-sidebar layout ─────────────────────────────────────────── */
+.bare {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ── Shell (sidebar + content) ─────────────────────────────────── */
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ── Sidebar ────────────────────────────────────────────────────
+   Default: collapsed to 52px (icons only)
+   On hover: slides out to 200px showing labels
+   Transition on width + opacity of labels
+──────────────────────────────────────────────────────────────── */
+.sidebar {
+  width: 52px;               /* collapsed width — icon only */
+  flex-shrink: 0;
+  background: #0a0a0d;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 14px 6px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;           /* clip labels when collapsed */
+  overflow-y: auto;
+  z-index: 50;
+
+  /* smooth expansion */
+  transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: width;
+}
+
+/* Expand on hover */
+.sidebar:hover {
+  width: 200px;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Logo button ────────────────────────────────────────────── */
+.logoBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* Collapsed: show single letter */
+.logoIcon {
+  font-size: 20px;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--pink);
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Full logo hidden when collapsed, shown on hover */
+.logoFull {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sidebar:hover .logoIcon { display: none; }
+.sidebar:hover .logoFull {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Nav ───────────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+/* Each nav item: icon always visible, label hidden until expanded */
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 8px;
+  border-radius: 9px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  min-width: 0;
+}
+
+.navItem:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+}
+
+.navActive {
+  background: rgba(255,45,120,0.12) !important;
+  color: var(--pink) !important;
+}
+
+/* Icon wrapper — always visible, fixed width */
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 20px;
+}
+
+/* Label — hidden (zero width + invisible) when collapsed */
+.label {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: opacity 0.18s ease, max-width 0.22s ease, margin-left 0.22s ease;
+  margin-left: 0;
+  pointer-events: none;
+}
+
+/* Show labels when sidebar is hovered */
+.sidebar:hover .label {
+  opacity: 1;
+  max-width: 140px;
+  margin-left: 8px;
+  pointer-events: auto;
+}
+
+/* Badge */
+.badge {
+  margin-left: auto;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--pink);
+  background: rgba(255,45,120,0.12);
+  border: 1px solid rgba(255,45,120,0.25);
+  border-radius: 4px;
+  padding: 2px 5px;
+  letter-spacing: 0.5px;
+  /* hidden when collapsed */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.sidebar:hover .badge {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Learn section ─────────────────────────────────────────── */
+.learn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.learnTitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: #444450;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 0 8px 6px;
+  /* hidden when collapsed */
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: opacity 0.18s ease, max-width 0.22s ease;
+  white-space: nowrap;
+}
+
+.sidebar:hover .learnTitle {
+  opacity: 1;
+  max-width: 160px;
+}
+
+/* ── Main content ──────────────────────────────────────────── */
+.main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
