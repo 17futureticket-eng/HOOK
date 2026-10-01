@@ -50,3 +50,9 @@
   color: var(--muted);
   line-height: 1.6;
 }
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section { padding: 40px 20px; }
+  .grid    { grid-template-columns: 1fr; }
+}

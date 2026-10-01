@@ -3,61 +3,144 @@
   background: var(--bg);
 }
 
+/* header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.followLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--pink);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255,45,120,0.25);
+  border-radius: 999px;
+  padding: 6px 14px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.followLink:hover {
+  background: rgba(255,45,120,0.08);
+  border-color: rgba(255,45,120,0.5);
+}
+
+/* horizontal scroll row */
 .scroll {
   display: flex;
   gap: 14px;
   overflow-x: auto;
   padding-bottom: 8px;
+  /* hide scrollbar on desktop, keep functional */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
 .scroll::-webkit-scrollbar { height: 4px; }
+.scroll::-webkit-scrollbar-track { background: transparent; }
+.scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
+/* tweet card — now an <a> link */
 .card {
   background: var(--bg2);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 20px;
-  min-width: 290px;
-  max-width: 330px;
+  min-width: 280px;
+  max-width: 320px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: border-color 0.2s;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .card:hover {
-  border-color: var(--border);
+  border-color: rgba(255,45,120,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
 }
 
+/* user row */
 .user {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.avatar {
-  width: 38px;
-  height: 38px;
+/* gradient avatar / real photo avatar */
+.avatarWrap {
+  position: relative;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  display: flex;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.avatarFallback {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  font-weight: 700;
-  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
 }
+
+.userInfo { flex: 1; min-width: 0; }
 
 .name {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .handle {
   font-size: 11px;
   color: var(--muted);
+  margin-top: 1px;
 }
 
+/* X icon top-right of card */
+.xBadge {
+  color: var(--muted);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* tweet text */
 .body {
   font-size: 13px;
   line-height: 1.65;
@@ -67,13 +150,16 @@
 
 .mention {
   color: var(--pink);
+  font-weight: 600;
 }
 
+/* footer */
 .footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: auto;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .date {
@@ -81,7 +167,10 @@
   color: var(--muted);
 }
 
-.xIcon {
-  font-size: 13px;
-  color: var(--muted);
+/* ── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .section { padding: 40px 20px; }
+  .scroll  { gap: 10px; }
+  .card    { min-width: 260px; padding: 16px; }
+  .heading { font-size: 20px; }
 }

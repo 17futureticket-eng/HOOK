@@ -74,3 +74,11 @@
   color: var(--muted);
   line-height: 1.7;
 }
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section  { padding: 40px 20px; }
+  .question { font-size: 13px; padding: 14px 16px; }
+  .answer   { padding: 0 16px; }
+  .open .answer { padding: 0 16px 14px; }
+}

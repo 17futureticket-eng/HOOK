@@ -27,3 +27,11 @@
 .links a:hover {
   color: var(--pink);
 }
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer { padding: 24px 20px; }
+  .links  { gap: 6px 14px; }
+  .links a { font-size: 11px; }
+  .main   { font-size: 12px; }
+}

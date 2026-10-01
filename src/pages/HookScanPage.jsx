@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import {
   ArrowLeft, Copy, Share2, Check, ChevronRight,
-  Search, Layers, Briefcase, Box, Zap, Users, BookOpen, FileText, Tag,
+  Search, Layers, Box, Zap, Users, BookOpen, FileText, Tag,
   AlertTriangle, Info, GitFork, Bookmark, Download, RefreshCw,
   Globe, Hash, Wallet, Shield,
+  Percent, ArrowLeftRight, Flame, Gift, Shuffle, Database,
+  Building2, Lock, Droplets, Clock, Award, ArrowUpRight,
+  Activity, FunctionSquare, ExternalLink, Cpu, Unplug, Settings2,
 } from 'lucide-react'
 import HookLogo from '../components/HookLogo'
 import HookLifecycle from '../components/hookscan/HookLifecycle'
@@ -27,23 +30,23 @@ const HOOK = {
 }
 
 const BEHAVIORS = [
-  { id:'dynfee',    icon:'%',  label:'Dynamic LP fees',              active: true  },
-  { id:'swdelta',   icon:'⇄',  label:'Swap delta accounting',        active: false },
-  { id:'burns',     icon:'🔥', label:'Token burns',                  active: false },
-  { id:'lprewards', icon:'🎁', label:'LP rewards',                   active: false },
-  { id:'random',    icon:'⚄',  label:'Randomness dependency',        active: false },
-  { id:'hookdata',  icon:'{}', label:'Custom hook data',             active: false },
-  { id:'poolmgr',   icon:'🏛', label:'PoolManager settlement',       active: false },
-  { id:'tradeguard',icon:'🛡', label:'Trade guards',                 active: false },
-  { id:'liquidity', icon:'💧', label:'Liquidity controls',           active: false },
-  { id:'scheduled', icon:'⏱', label:'Scheduled payouts',            active: false },
-  { id:'reward',    icon:'🏆', label:'Reward distribution',          active: false },
-  { id:'revenue',   icon:'↗',  label:'Revenue routing',              active: false },
-  { id:'poolstate', icon:'○',  label:'Pool-state reads',             active: false },
-  { id:'math',      icon:'Σ',  label:'Custom math or curve logic',   active: false },
-  { id:'extliq',    icon:'↗',  label:'External liquidity integration',active:false },
-  { id:'extprot',   icon:'🔌', label:'External protocol dependency', active: false },
-  { id:'autoparam', icon:'⟳',  label:'Autonomous parameter updates', active: false },
+  { id:'dynfee',    Icon:Percent,         label:'Dynamic LP fees',                active: true  },
+  { id:'swdelta',   Icon:ArrowLeftRight,  label:'Swap delta accounting',          active: false },
+  { id:'burns',     Icon:Flame,           label:'Token burns',                    active: false },
+  { id:'lprewards', Icon:Gift,            label:'LP rewards',                     active: false },
+  { id:'random',    Icon:Shuffle,         label:'Randomness dependency',          active: false },
+  { id:'hookdata',  Icon:Database,        label:'Custom hook data',               active: false },
+  { id:'poolmgr',   Icon:Building2,       label:'PoolManager settlement',         active: false },
+  { id:'tradeguard',Icon:Lock,            label:'Trade guards',                   active: false },
+  { id:'liquidity', Icon:Droplets,        label:'Liquidity controls',             active: false },
+  { id:'scheduled', Icon:Clock,           label:'Scheduled payouts',              active: false },
+  { id:'reward',    Icon:Award,           label:'Reward distribution',            active: false },
+  { id:'revenue',   Icon:ArrowUpRight,    label:'Revenue routing',               active: false },
+  { id:'poolstate', Icon:Activity,        label:'Pool-state reads',               active: false },
+  { id:'math',      Icon:FunctionSquare,  label:'Custom math or curve logic',     active: false },
+  { id:'extliq',    Icon:ExternalLink,    label:'External liquidity integration', active: false },
+  { id:'extprot',   Icon:Unplug,          label:'External protocol dependency',   active: false },
+  { id:'autoparam', Icon:Settings2,       label:'Autonomous parameter updates',   active: false },
 ]
 
 const SIGNALS = [

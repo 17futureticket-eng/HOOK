@@ -30,7 +30,10 @@
   background: var(--bg2); border: 1px solid var(--border); border-radius: 12px;
   padding: 14px; display: flex; gap: 10px; align-items: flex-start;
 }
-.comingIcon { font-size: 20px; flex-shrink: 0; }
+.comingIconWrap {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
 .comingName { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
 .comingDesc { font-size: 11px; color: var(--muted); line-height: 1.5; }
 
@@ -48,3 +51,15 @@
   white-space: nowrap; box-shadow: 0 0 16px rgba(255,45,120,0.35); transition: background 0.2s;
 }
 .ctaBtn:hover { background: #ff1a6a; }
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page       { padding: 24px 20px; }
+  .liveGrid   { grid-template-columns: 1fr; }
+  .comingGrid { grid-template-columns: repeat(2, 1fr); }
+  .buildCta   { flex-direction: column; gap: 16px; }
+  .ctaBtn     { width: 100%; justify-content: center; }
+}
+@media (max-width: 400px) {
+  .comingGrid { grid-template-columns: 1fr; }
+}

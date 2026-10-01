@@ -234,6 +234,21 @@ export default function Hero({ onScanAddress }) {
           Modular infrastructure for surfacing, composing and integrating custom Uniswap hooks.
         </p>
 
+        {/* CTA row */}
+        <div className={styles.ctaRow}>
+          <a
+            className={styles.buyBtn}
+            href="https://pump.fun"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className={styles.buyDot} />
+            Buy $HOOKR
+            <ArrowRight size={15} strokeWidth={2.5} />
+          </a>
+          <span className={styles.ctaPrice}>$0.042 <span className={styles.ctaChange}>+12.4%</span></span>
+        </div>
+
         {/* ── Search bar — single address input ── */}
         <div className={styles.searchOuter}>
           <div className={styles.searchWrap}>

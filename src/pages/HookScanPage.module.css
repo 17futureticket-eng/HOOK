@@ -630,3 +630,38 @@
   padding: 20px 0;
   text-align: center;
 }
+
+/* ── Mobile ─────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .heroSection { grid-template-columns: 1fr; gap: 16px; }
+  .heroRight   { align-items: flex-start; }
+  .hookName    { font-size: 28px; }
+  .scoreNum    { font-size: 38px; }
+  .behaviorGrid { grid-template-columns: repeat(4, 1fr); }
+  .twoCol      { grid-template-columns: 1fr; }
+  .fourCol     { grid-template-columns: repeat(2, 1fr); }
+  .content     { padding: 20px 16px; }
+}
+
+@media (max-width: 600px) {
+  .scanBar        { padding: 10px 14px; gap: 8px; flex-wrap: wrap; }
+  .scanBarLinks   { display: none; }
+  .scanBarInner   { flex: 1; min-width: 0; }
+  .scanTabActive  { display: block; }
+  .scanTab        { display: none; }
+  .scanAddrInput  { font-size: 11px; }
+  .hookName       { font-size: 22px; letter-spacing: -0.5px; }
+  .behaviorGrid   { grid-template-columns: repeat(3, 1fr); }
+  .evidencePipeline { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .evidenceLine   { display: none; }
+  .evidenceStep   { flex-direction: row; gap: 10px; }
+  .moreRow        { padding: 12px 2px; }
+}
+
+@media (max-width: 420px) {
+  .behaviorGrid   { grid-template-columns: repeat(2, 1fr); }
+  .hookBadges     { gap: 6px; }
+  .fourCol        { grid-template-columns: 1fr; }
+  .heroSection    { padding: 20px 16px; }
+  .scoreNum       { font-size: 32px; }
+}

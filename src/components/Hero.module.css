@@ -278,3 +278,94 @@
 }
 
 .moreWays:hover { text-decoration: underline; }
+
+/* ── Buy $HOOKR CTA ─────────────────────────────────── */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.buyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink);
+  color: #fff;
+  border-radius: 50px;
+  padding: 11px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.1px;
+  box-shadow: 0 0 24px rgba(255,45,120,0.45);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.buyBtn:hover {
+  background: #ff1a6a;
+  box-shadow: 0 0 36px rgba(255,45,120,0.65);
+  transform: translateY(-1px);
+}
+
+.buyDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.85;
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 0.85; }
+  50%      { opacity: 0.35; }
+}
+
+.ctaPrice {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ctaChange {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/* ── Mobile responsive ──────────────────────────────── */
+@media (max-width: 768px) {
+  .hero    { padding: 36px 20px 36px; min-height: auto; }
+  .content { max-width: 100%; }
+  .heading { font-size: 28px; }
+  .sub     { font-size: 14px; margin-bottom: 20px; }
+
+  .searchOuter { border-radius: 12px; }
+  .searchWrap  { border-radius: 11px; padding: 5px; min-height: 50px; }
+
+  .tabs  { display: none; }  /* hide tabs on mobile, keep clean */
+  .input { font-size: 14px; padding: 8px 10px; }
+
+  .scanBtn {
+    padding: 9px 16px;
+    font-size: 13px;
+    border-radius: 9px;
+  }
+
+  .chips { gap: 6px; margin-top: 10px; }
+  .chip  { font-size: 10.5px; padding: 4px 10px; }
+  .moreWays { margin-left: 0; margin-top: 4px; }
+}
+
+@media (max-width: 480px) {
+  .heading { font-size: 24px; letter-spacing: -0.5px; }
+  .badges  { gap: 6px; margin-bottom: 14px; }
+  .badge   { font-size: 11px; padding: 4px 10px; }
+  .ctaRow  { gap: 10px; }
+  .buyBtn  { font-size: 13px; padding: 10px 18px; }
+  .ctaPrice{ font-size: 13px; }
+}

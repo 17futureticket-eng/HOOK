@@ -1,23 +1,23 @@
-import { Zap, TrendingUp, Waves } from 'lucide-react'
+import { Zap, BarChart2, Repeat2 } from 'lucide-react'
 import styles from './Integrations.module.css'
 
 const ITEMS = [
   {
     Icon: Zap,
-    iconColor: '#f97316',
-    iconBg: 'rgba(249,115,22,0.12)',
+    iconColor: '#fb923c',
+    iconBg: 'rgba(251,146,60,0.12)',
     name: 'What The Hook',
-    desc: 'Arbitrage retention for Hookr pools: captures cross-venue price gaps inside the swap and shares the profit with pool participants instead of external MEV bots. The current root blocks external arbitrage entering through registered v3 pool callbacks.',
+    desc: 'Arbitrage retention for Hookr pools: captures cross-venue price gaps inside the swap and shares the profit with pool participants instead of external MEV bots.',
   },
   {
-    Icon: TrendingUp,
+    Icon: BarChart2,
     iconColor: '#ff2d78',
     iconBg: 'rgba(255,45,120,0.12)',
     name: 'Fomo',
     desc: 'An independent trading venue for tokens on Robinhood Chain.',
   },
   {
-    Icon: Waves,
+    Icon: Repeat2,
     iconColor: '#a78bfa',
     iconBg: 'rgba(167,139,250,0.12)',
     name: 'Uniswap',
@@ -37,10 +37,7 @@ export default function Integrations() {
       <div className={styles.grid}>
         {ITEMS.map((item) => (
           <div key={item.name} className={styles.card}>
-            <div
-              className={styles.logo}
-              style={{ background: item.iconBg, border: `1px solid ${item.iconColor}22` }}
-            >
+            <div className={styles.logo} style={{ background: item.iconBg, border: `1px solid ${item.iconColor}22` }}>
               <item.Icon size={20} color={item.iconColor} strokeWidth={1.8} />
             </div>
             <div className={styles.info}>

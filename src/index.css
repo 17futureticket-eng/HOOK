@@ -123,3 +123,29 @@ button {
   font-size: 10px;
   font-weight: 700;
 }
+
+/* ── Global mobile resets ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+
+  /* Prevent horizontal overflow on all sections */
+  section, div { max-width: 100%; }
+
+  /* Section headers stack on mobile */
+  .section-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .section-link { font-size: 12px; }
+  .section-label { font-size: 10px; }
+
+  .live-badge { font-size: 9px; }
+}
+
+/* Prevent any element from blowing out mobile layout */
+* { min-width: 0; }
+
+/* Smooth tap highlight removal on mobile */
+button, a { -webkit-tap-highlight-color: transparent; }

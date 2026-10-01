@@ -78,3 +78,15 @@
   box-shadow: 0 0 16px rgba(255,45,120,0.4); transition: background 0.2s;
 }
 .deployBtnFull:hover { background: #ff1a6a; }
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page    { padding: 24px 20px; }
+  .header  { flex-direction: column; gap: 14px; }
+  .layout  { grid-template-columns: 1fr; }
+  .blocksGrid { grid-template-columns: repeat(2, 1fr); }
+  .preview { position: static; }
+}
+@media (max-width: 400px) {
+  .blocksGrid { grid-template-columns: 1fr; }
+}

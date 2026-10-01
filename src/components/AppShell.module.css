@@ -208,3 +208,60 @@
   min-width: 0;
   overflow-y: auto;
 }
+
+/* ── Mobile — hide sidebar entirely on small screens ──────────── */
+@media (max-width: 768px) {
+  .shell { flex-direction: column; }
+
+  .sidebar {
+    width: 100% !important;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    gap: 2px;
+    align-items: center;
+  }
+
+  .sidebar:hover { width: 100% !important; box-shadow: none; }
+
+  .logoBtn  { padding: 0 10px 0 0; border-right: 1px solid var(--border); }
+  .logoFull { opacity: 1 !important; transform: none !important; max-width: unset !important; }
+  .logoIcon { display: none !important; }
+
+  .nav        { flex-direction: row; flex: 0; gap: 2px; }
+  .learn      { flex-direction: row; padding-top: 0; border-top: none; border-left: 1px solid var(--border); padding-left: 10px; margin-left: 6px; }
+  .learnTitle { display: none; }
+
+  .navItem {
+    padding: 7px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Show labels on mobile horizontal nav */
+  .label {
+    opacity: 1 !important;
+    max-width: 120px !important;
+    margin-left: 6px !important;
+    pointer-events: auto !important;
+  }
+
+  .badge { opacity: 1 !important; pointer-events: auto !important; }
+
+  .main { min-width: 0; overflow-y: auto; }
+}
+
+@media (max-width: 480px) {
+  /* Hide labels on very small, show icons only */
+  .label    { display: none !important; }
+  .navItem  { padding: 8px; }
+  .badge    { display: none !important; }
+}

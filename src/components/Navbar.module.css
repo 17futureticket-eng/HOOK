@@ -224,3 +224,16 @@
 }
 
 .pinkLink:hover { text-decoration: underline; }
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav { padding: 0 16px; height: 52px; }
+  .links { gap: 16px; }
+  .links a { font-size: 12px; }
+  .openApp { padding: 6px 12px; font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .links { display: none; }
+  .openApp { padding: 6px 12px; }
+}
